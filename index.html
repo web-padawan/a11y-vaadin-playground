@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: var(--lumo-font-family);
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      section {
+        min-width: 440px;
+        margin: 1rem;
+        padding: 1rem;
+        border: solid 1px #ccc;
+      }
+
+      footer {
+        padding: 1rem;
+        text-align: center;
+      }
+
+      h2 {
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+      }
+
+      .buttons > * {
+        margin-right: 8px;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 4px 8px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h2>Button</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-button>Confirm</vaadin-button>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-button disabled>Update</vaadin-button>
+            </td>
+          </tr>
+          <tr>
+            <td>Button with prefix</td>
+            <td>
+              <vaadin-button>
+                <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
+                New
+              </vaadin-button>
+            </td>
+          </tr>
+          <tr>
+            <td>Button with icon</td>
+            <td>
+              <vaadin-button>
+                <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
+                Sign out
+              </vaadin-button>
+            </td>
+          </tr>
+          <tr>
+            <td>Icon only button</td>
+            <td>
+              <vaadin-button aria-label="Download" theme="icon">
+                <vaadin-icon icon="lumo:download"></vaadin-icon>
+              </vaadin-button>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Upload</h2>
+        <tr>
+          <td>Default</td>
+          <td>
+            <vaadin-upload></vaadin-upload>
+          </td>
+        </tr>
+        <tr>
+          <td>File list</td>
+          <td>
+            <vaadin-upload id="files"></vaadin-upload>
+          </td>
+        </tr>
+      </section>
+
+      <section>
+        <h2>Email field</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-email-field label="Email"></vaadin-email-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Placeholder</td>
+            <td>
+              <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Readonly</td>
+            <td>
+              <vaadin-email-field label="Email" readonly></vaadin-email-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-email-field label="Email" disabled></vaadin-email-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Error message</td>
+            <td>
+              <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Helper text</td>
+            <td>
+              <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Password field</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-password-field label="Password"></vaadin-password-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Placeholder</td>
+            <td>
+              <vaadin-password-field label="Password" placeholder="qwerty"></vaadin-password-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Reveal button hidden</td>
+            <td>
+              <vaadin-password-field label="Password" reveal-button-hidden></vaadin-password-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-password-field label="Password" disabled></vaadin-password-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Error message</td>
+            <td>
+              <vaadin-password-field
+                label="Password"
+                required
+                error-message="This field is required"
+              ></vaadin-password-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Helper text</td>
+            <td>
+              <vaadin-password-field label="Password" helper-text="At least 8 characters"></vaadin-password-field>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Number field</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-number-field label="Quantity"></vaadin-number-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Placeholder</td>
+            <td>
+              <vaadin-number-field label="Quantity" placeholder="42"></vaadin-number-field>
+            </td>
+          </tr>
+          <tr>
+            <td>With controls</td>
+            <td>
+              <vaadin-number-field label="Quantity" has-controls></vaadin-number-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-number-field label="Quantity" disabled></vaadin-number-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Error message</td>
+            <td>
+              <vaadin-number-field
+                label="Quantity"
+                required
+                error-message="This field is required"
+              ></vaadin-number-field>
+            </td>
+          </tr>
+          <tr>
+            <td>Helper text</td>
+            <td>
+              <vaadin-number-field label="Quantity" helper-text="1 or more"></vaadin-number-field>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Text area</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-text-area label="Comment"></vaadin-text-area>
+            </td>
+          </tr>
+          <tr>
+            <td>Placeholder</td>
+            <td>
+              <vaadin-text-area label="Comment" placeholder="Some feedback"></vaadin-text-area>
+            </td>
+          </tr>
+          <tr>
+            <td>Readonly</td>
+            <td>
+              <vaadin-text-area label="Comment" readonly></vaadin-text-area>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-text-area label="Comment" disabled></vaadin-text-area>
+            </td>
+          </tr>
+          <tr>
+            <td>Error message</td>
+            <td>
+              <vaadin-text-area label="Comment" required error-message="This field is required"></vaadin-text-area>
+            </td>
+          </tr>
+          <tr>
+            <td>Helper text</td>
+            <td>
+              <vaadin-text-area label="Comment" helper-text="Share your feedback"></vaadin-text-area>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!--
+      <section>
+        <h2>Select</h2>
+        <table>
+          <tr>
+            <td>Default</td>
+            <td>
+              <vaadin-select label="Role"></vaadin-select>
+            </td>
+          </tr>
+          <tr>
+            <td>Placeholder</td>
+            <td>
+              <vaadin-select label="Role" placeholder="Select a role"></vaadin-select>
+            </td>
+          </tr>
+          <tr>
+            <td>Readonly</td>
+            <td>
+              <vaadin-select label="Role" value="User" readonly></vaadin-select>
+            </td>
+          </tr>
+          <tr>
+            <td>Disabled</td>
+            <td>
+              <vaadin-select label="Role" disabled></vaadin-select>
+            </td>
+          </tr>
+          <tr>
+            <td>Error message</td>
+            <td>
+              <vaadin-select label="Role" required error-message="This field is required"></vaadin-select>
+            </td>
+          </tr>
+          <tr>
+            <td>Helper text</td>
+            <td>
+              <vaadin-select label="Role" helper-text="Reload is required"></vaadin-select>
+            </td>
+          </tr>
+        </table>
+      </section>
+      -->
+    </div>
+
+    <div class="container">
+      <footer>Vaadin web components <b>22.0.0-alpha5</b>. Last updated <b>8 September 2021</b>.</footer>
+    </div>
+
+    <script type="module">
+      import '@vaadin/button';
+      import '@vaadin/email-field';
+      import '@vaadin/number-field';
+      import '@vaadin/password-field';
+      import '@vaadin/text-area';
+      import '@vaadin/vaadin-icon';
+      import '@vaadin/vaadin-lumo-styles/vaadin-iconset.js';
+      import '@vaadin/vaadin-upload';
+
+      const upload = document.querySelector('#files');
+      upload.files = [{ name: 'Don Quixote.pdf' }, { name: 'Hamlet.pdf', progress: 100, complete: true }];
+      // To show the start button
+      upload.files[0].held = true;
+      // To show the retry button
+      upload.files[0].error = 'Could not upload file';
+
+      // TODO: uncomment select when 22.0.0-alpha6 is released
+      // See https://github.com/vaadin/web-components/issues/2472
+
+      // import '@vaadin/vaadin-item';
+      // import '@vaadin/vaadin-list-box';
+      // import '@vaadin/select';
+
+      /*
+      document.querySelectorAll('vaadin-select').forEach((select) => {
+        select.renderer = function (root, select) {
+          if (root.firstChild) {
+            return;
+          }
+
+          const listBox = document.createElement('vaadin-list-box');
+          // append 3 <vaadin-item> elements
+          ['Admin', 'Moderator', 'User'].forEach(function (name) {
+            const item = document.createElement('vaadin-item');
+            item.textContent = name;
+            item.setAttribute('label', name);
+            listBox.appendChild(item);
+          });
+
+          root.appendChild(listBox);
+        };
+      });
+      */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "a11y-vaadin-playground",
+  "private": true,
+  "author": "Vaadin Ltd",
+  "license": "Apache-2.0",
+  "scripts": {
+    "dist": "rimraf dist && rollup -c rollup.config.js",
+    "start": "web-dev-server --node-resolve"
+  },
+  "dependencies": {
+    "@vaadin/button": "^22.0.0-alpha5",
+    "@vaadin/email-field": "^22.0.0-alpha5",
+    "@vaadin/number-field": "^22.0.0-alpha5",
+    "@vaadin/password-field": "^22.0.0-alpha5",
+    "@vaadin/select": "^22.0.0-alpha5",
+    "@vaadin/text-area": "^22.0.0-alpha5",
+    "@vaadin/vaadin-icon": "^22.0.0-alpha5",
+    "@vaadin/vaadin-upload": "^22.0.0-alpha5"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.22",
+    "@web/rollup-plugin-html": "^1.10.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
