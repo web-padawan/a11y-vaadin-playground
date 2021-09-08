@@ -36,8 +36,8 @@
         font-size: 1.25rem;
       }
 
-      .buttons > * {
-        margin-right: 8px;
+      .label {
+        margin-bottom: 8px;
       }
 
       table {
@@ -98,17 +98,14 @@
 
       <section>
         <h2>Upload</h2>
-        <tr>
-          <td>Default</td>
-          <td>
+          <p>
+            <div class="label">Default</div>
             <vaadin-upload></vaadin-upload>
-          </td>
-        </tr>
-        <tr>
-          <td>File list</td>
-          <td>
+          </p>
+          <p>
+            <div class="label">File list</div>
             <vaadin-upload id="files"></vaadin-upload>
-          </td>
+          </p>
         </tr>
       </section>
 
