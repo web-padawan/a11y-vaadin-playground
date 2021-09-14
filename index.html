@@ -285,7 +285,6 @@
         </table>
       </section>
 
-      <!--
       <section>
         <h2>Select</h2>
         <table>
@@ -327,11 +326,10 @@
           </tr>
         </table>
       </section>
-      -->
     </div>
 
     <div class="container">
-      <footer>Vaadin web components <b>22.0.0-alpha5</b>. Last updated <b>8 September 2021</b>.</footer>
+      <footer>Vaadin web components <b>22.0.0-alpha6</b>. Last updated <b>14 September 2021</b>.</footer>
     </div>
 
     <script type="module">
@@ -341,7 +339,10 @@
       import '@vaadin/password-field';
       import '@vaadin/text-area';
       import '@vaadin/vaadin-icon';
+      import '@vaadin/vaadin-item';
+      import '@vaadin/vaadin-list-box';
       import '@vaadin/vaadin-lumo-styles/vaadin-iconset.js';
+      import '@vaadin/select';
       import '@vaadin/vaadin-upload';
 
       const upload = document.querySelector('#files');
@@ -351,14 +352,6 @@
       // To show the retry button
       upload.files[0].error = 'Could not upload file';
 
-      // TODO: uncomment select when 22.0.0-alpha6 is released
-      // See https://github.com/vaadin/web-components/issues/2472
-
-      // import '@vaadin/vaadin-item';
-      // import '@vaadin/vaadin-list-box';
-      // import '@vaadin/select';
-
-      /*
       document.querySelectorAll('vaadin-select').forEach((select) => {
         select.renderer = function (root, select) {
           if (root.firstChild) {
@@ -377,7 +370,6 @@
           root.appendChild(listBox);
         };
       });
-      */
     </script>
   </body>
 </html>
