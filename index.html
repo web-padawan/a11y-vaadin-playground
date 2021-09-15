@@ -11,6 +11,10 @@
         font-family: var(--lumo-font-family);
       }
 
+      * {
+        box-sizing: border-box;
+      }
+
       .container {
         display: flex;
         flex-wrap: wrap;
@@ -20,7 +24,7 @@
       }
 
       section {
-        min-width: 440px;
+        min-width: 450px;
         margin: 1rem;
         padding: 1rem;
         border: solid 1px #ccc;
@@ -36,17 +40,37 @@
         font-size: 1.25rem;
       }
 
-      .label {
-        margin-bottom: 8px;
+      .row .label {
+        margin: 8px 0;
       }
 
       table {
         border-collapse: collapse;
       }
 
-      td {
-        padding: 4px 8px;
-        border: none;
+      .grid {
+        display: grid;
+        grid-template-columns: 150px 200px;
+      }
+
+      @media (max-width: 480px) {
+        section {
+          width: 100%;
+          min-width: auto;
+          margin: 1rem 0 0;
+          padding-top: 0;
+          border: none;
+          border-bottom: solid 1px #ccc;
+        }
+
+        .grid {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .label {
+          margin: 8px 0 4px;
+        }
       }
     </style>
   </head>
@@ -54,277 +78,232 @@
     <div class="container">
       <section>
         <h2>Button</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-button>Confirm</vaadin-button>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-button disabled>Update</vaadin-button>
-            </td>
-          </tr>
-          <tr>
-            <td>Button with prefix</td>
-            <td>
-              <vaadin-button>
-                <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
-                New
-              </vaadin-button>
-            </td>
-          </tr>
-          <tr>
-            <td>Button with icon</td>
-            <td>
-              <vaadin-button>
-                <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
-                Sign out
-              </vaadin-button>
-            </td>
-          </tr>
-          <tr>
-            <td>Icon only button</td>
-            <td>
-              <vaadin-button aria-label="Download" theme="icon">
-                <vaadin-icon icon="lumo:download"></vaadin-icon>
-              </vaadin-button>
-            </td>
-          </tr>
-        </table>
+
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-button>Confirm</vaadin-button>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-button disabled>Update</vaadin-button>
+          </div>
+
+          <div class="label">Button with prefix</div>
+          <div>
+            <vaadin-button>
+              <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
+              New
+            </vaadin-button>
+          </div>
+
+          <div class="label">Button with icon</div>
+          <div>
+            <vaadin-button>
+              <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
+              Sign out
+            </vaadin-button>
+          </div>
+
+          <div class="label">Icon only button</div>
+          <div>
+            <vaadin-button aria-label="Download" theme="icon">
+              <vaadin-icon icon="lumo:download"></vaadin-icon>
+            </vaadin-button>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2>Upload</h2>
-          <p>
-            <div class="label">Default</div>
-            <vaadin-upload></vaadin-upload>
-          </p>
-          <p>
-            <div class="label">File list</div>
-            <vaadin-upload id="files"></vaadin-upload>
-          </p>
-        </tr>
+        <div class="row">
+          <div class="label">Default</div>
+          <vaadin-upload></vaadin-upload>
+        </div>
+        <div class="row">
+          <div class="label">File list</div>
+          <vaadin-upload id="files"></vaadin-upload>
+        </div>
       </section>
 
       <section>
         <h2>Email field</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-email-field label="Email"></vaadin-email-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Placeholder</td>
-            <td>
-              <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Readonly</td>
-            <td>
-              <vaadin-email-field label="Email" readonly></vaadin-email-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-email-field label="Email" disabled></vaadin-email-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Error message</td>
-            <td>
-              <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Helper text</td>
-            <td>
-              <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
-            </td>
-          </tr>
-        </table>
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-email-field label="Email"></vaadin-email-field>
+          </div>
+
+          <div class="label">Placeholder</div>
+          <div>
+            <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
+          </div>
+
+          <div class="label">Readonly</div>
+          <div>
+            <vaadin-email-field label="Email" readonly></vaadin-email-field>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-email-field label="Email" disabled></vaadin-email-field>
+          </div>
+
+          <div class="label">Error message</div>
+          <div>
+            <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
+          </div>
+
+          <div class="label">Helper text</div>
+          <div>
+            <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2>Password field</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-password-field label="Password"></vaadin-password-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Placeholder</td>
-            <td>
-              <vaadin-password-field label="Password" placeholder="qwerty"></vaadin-password-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Reveal button hidden</td>
-            <td>
-              <vaadin-password-field label="Password" reveal-button-hidden></vaadin-password-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-password-field label="Password" disabled></vaadin-password-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Error message</td>
-            <td>
-              <vaadin-password-field
-                label="Password"
-                required
-                error-message="This field is required"
-              ></vaadin-password-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Helper text</td>
-            <td>
-              <vaadin-password-field label="Password" helper-text="At least 8 characters"></vaadin-password-field>
-            </td>
-          </tr>
-        </table>
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-password-field label="Password"></vaadin-password-field>
+          </div>
+
+          <div class="label">Placeholder</div>
+          <div>
+            <vaadin-password-field label="Password" placeholder="qwerty"></vaadin-password-field>
+          </div>
+
+          <div class="label">Reveal button hidden</div>
+          <div>
+            <vaadin-password-field label="Password" reveal-button-hidden></vaadin-password-field>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-password-field label="Password" disabled></vaadin-password-field>
+          </div>
+
+          <div class="label">Error message</div>
+          <div>
+            <vaadin-password-field
+              label="Password"
+              required
+              error-message="This field is required"
+            ></vaadin-password-field>
+          </div>
+
+          <div class="label">Helper text</div>
+          <div>
+            <vaadin-password-field label="Password" helper-text="At least 8 characters"></vaadin-password-field>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2>Number field</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-number-field label="Quantity"></vaadin-number-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Placeholder</td>
-            <td>
-              <vaadin-number-field label="Quantity" placeholder="42"></vaadin-number-field>
-            </td>
-          </tr>
-          <tr>
-            <td>With controls</td>
-            <td>
-              <vaadin-number-field label="Quantity" has-controls></vaadin-number-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-number-field label="Quantity" disabled></vaadin-number-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Error message</td>
-            <td>
-              <vaadin-number-field
-                label="Quantity"
-                required
-                error-message="This field is required"
-              ></vaadin-number-field>
-            </td>
-          </tr>
-          <tr>
-            <td>Helper text</td>
-            <td>
-              <vaadin-number-field label="Quantity" helper-text="1 or more"></vaadin-number-field>
-            </td>
-          </tr>
-        </table>
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-number-field label="Quantity"></vaadin-number-field>
+          </div>
+
+          <div class="label">Placeholder</div>
+          <div>
+            <vaadin-number-field label="Quantity" placeholder="42"></vaadin-number-field>
+          </div>
+
+          <div class="label">With controls</div>
+          <div>
+            <vaadin-number-field label="Quantity" has-controls></vaadin-number-field>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-number-field label="Quantity" disabled></vaadin-number-field>
+          </div>
+
+          <div class="label">Error message</div>
+          <div>
+            <vaadin-number-field label="Quantity" required error-message="This field is required"></vaadin-number-field>
+          </div>
+
+          <div class="label">Helper text</div>
+          <div>
+            <vaadin-number-field label="Quantity" helper-text="1 or more"></vaadin-number-field>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2>Text area</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-text-area label="Comment"></vaadin-text-area>
-            </td>
-          </tr>
-          <tr>
-            <td>Placeholder</td>
-            <td>
-              <vaadin-text-area label="Comment" placeholder="Some feedback"></vaadin-text-area>
-            </td>
-          </tr>
-          <tr>
-            <td>Readonly</td>
-            <td>
-              <vaadin-text-area label="Comment" readonly></vaadin-text-area>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-text-area label="Comment" disabled></vaadin-text-area>
-            </td>
-          </tr>
-          <tr>
-            <td>Error message</td>
-            <td>
-              <vaadin-text-area label="Comment" required error-message="This field is required"></vaadin-text-area>
-            </td>
-          </tr>
-          <tr>
-            <td>Helper text</td>
-            <td>
-              <vaadin-text-area label="Comment" helper-text="Share your feedback"></vaadin-text-area>
-            </td>
-          </tr>
-        </table>
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-text-area label="Comment"></vaadin-text-area>
+          </div>
+
+          <div class="label">Placeholder</div>
+          <div>
+            <vaadin-text-area label="Comment" placeholder="Some feedback"></vaadin-text-area>
+          </div>
+
+          <div class="label">Readonly</div>
+          <div>
+            <vaadin-text-area label="Comment" readonly></vaadin-text-area>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-text-area label="Comment" disabled></vaadin-text-area>
+          </div>
+
+          <div class="label">Error message</div>
+          <div>
+            <vaadin-text-area label="Comment" required error-message="This field is required"></vaadin-text-area>
+          </div>
+
+          <div class="label">Helper text</div>
+          <div>
+            <vaadin-text-area label="Comment" helper-text="Share your feedback"></vaadin-text-area>
+          </div>
+        </div>
       </section>
 
       <section>
         <h2>Select</h2>
-        <table>
-          <tr>
-            <td>Default</td>
-            <td>
-              <vaadin-select label="Role"></vaadin-select>
-            </td>
-          </tr>
-          <tr>
-            <td>Placeholder</td>
-            <td>
-              <vaadin-select label="Role" placeholder="Select a role"></vaadin-select>
-            </td>
-          </tr>
-          <tr>
-            <td>Readonly</td>
-            <td>
-              <vaadin-select label="Role" value="User" readonly></vaadin-select>
-            </td>
-          </tr>
-          <tr>
-            <td>Disabled</td>
-            <td>
-              <vaadin-select label="Role" disabled></vaadin-select>
-            </td>
-          </tr>
-          <tr>
-            <td>Error message</td>
-            <td>
-              <vaadin-select label="Role" required error-message="This field is required"></vaadin-select>
-            </td>
-          </tr>
-          <tr>
-            <td>Helper text</td>
-            <td>
-              <vaadin-select label="Role" helper-text="Reload is required"></vaadin-select>
-            </td>
-          </tr>
-        </table>
+        <div class="grid">
+          <div class="label">Default</div>
+          <div>
+            <vaadin-select label="Role"></vaadin-select>
+          </div>
+
+          <div class="label">Placeholder</div>
+          <div>
+            <vaadin-select label="Role" placeholder="Select a role"></vaadin-select>
+          </div>
+
+          <div class="label">Readonly</div>
+          <div>
+            <vaadin-select label="Role" value="User" readonly></vaadin-select>
+          </div>
+
+          <div class="label">Disabled</div>
+          <div>
+            <vaadin-select label="Role" disabled></vaadin-select>
+          </div>
+
+          <div class="label">Error message</div>
+          <div>
+            <vaadin-select label="Role" required error-message="This field is required"></vaadin-select>
+          </div>
+
+          <div class="label">Helper text</div>
+          <div>
+            <vaadin-select label="Role" helper-text="Reload is required"></vaadin-select>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -333,37 +312,37 @@
     </div>
 
     <script type="module">
-      import '@vaadin/button';
-      import '@vaadin/email-field';
-      import '@vaadin/number-field';
-      import '@vaadin/password-field';
-      import '@vaadin/text-area';
-      import '@vaadin/vaadin-icon';
-      import '@vaadin/vaadin-item';
-      import '@vaadin/vaadin-list-box';
-      import '@vaadin/vaadin-lumo-styles/vaadin-iconset.js';
-      import '@vaadin/select';
-      import '@vaadin/vaadin-upload';
+      import "@vaadin/button";
+      import "@vaadin/email-field";
+      import "@vaadin/number-field";
+      import "@vaadin/password-field";
+      import "@vaadin/text-area";
+      import "@vaadin/vaadin-icon";
+      import "@vaadin/vaadin-item";
+      import "@vaadin/vaadin-list-box";
+      import "@vaadin/vaadin-lumo-styles/vaadin-iconset.js";
+      import "@vaadin/select";
+      import "@vaadin/vaadin-upload";
 
-      const upload = document.querySelector('#files');
-      upload.files = [{ name: 'Don Quixote.pdf' }, { name: 'Hamlet.pdf', progress: 100, complete: true }];
+      const upload = document.querySelector("#files");
+      upload.files = [{ name: "Don Quixote.pdf" }, { name: "Hamlet.pdf", progress: 100, complete: true }];
       // To show the start button
       upload.files[0].held = true;
       // To show the retry button
-      upload.files[0].error = 'Could not upload file';
+      upload.files[0].error = "Could not upload file";
 
-      document.querySelectorAll('vaadin-select').forEach((select) => {
+      document.querySelectorAll("vaadin-select").forEach((select) => {
         select.renderer = function (root, select) {
           if (root.firstChild) {
             return;
           }
 
-          const listBox = document.createElement('vaadin-list-box');
+          const listBox = document.createElement("vaadin-list-box");
           // append 3 <vaadin-item> elements
-          ['Admin', 'Moderator', 'User'].forEach(function (name) {
-            const item = document.createElement('vaadin-item');
+          ["Admin", "Moderator", "User"].forEach(function (name) {
+            const item = document.createElement("vaadin-item");
             item.textContent = name;
-            item.setAttribute('label', name);
+            item.setAttribute("label", name);
             listBox.appendChild(item);
           });
 
