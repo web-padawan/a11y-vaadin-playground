@@ -1,12 +1,12 @@
 /* eslint-env node */
-const { nodeResolve } = require('@rollup/plugin-node-resolve');
-const { terser } = require('rollup-plugin-terser');
-const html = require('@web/rollup-plugin-html').default;
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
+import html from '@web/rollup-plugin-html';
 
-module.exports = {
+export default {
   input: './index.html',
   output: {
     dir: './dist'
   },
-  plugins: [html(), nodeResolve(), terser()]
+  plugins: [html({ minify: true }), nodeResolve(), terser()]
 };
