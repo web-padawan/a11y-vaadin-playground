@@ -5,6 +5,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "dist": "rimraf dist && rollup -c rollup.config.js",
+    "format": "prettier index.html --write",
     "start": "web-dev-server --node-resolve"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@web/dev-server": "^0.1.22",
     "@web/rollup-plugin-html": "^1.10.0",
+    "prettier": "^2.4.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.3",
     "rollup-plugin-terser": "^7.0.2"
