@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: var(--lumo-font-family);
+}
+
+* {
+  box-sizing: border-box;
+}

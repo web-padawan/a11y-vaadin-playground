@@ -1,2 +1,4 @@
 node_modules
 dist
+pages/*/*.css
+pages/*/*.html

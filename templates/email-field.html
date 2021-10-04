@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Email Field</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: normal;
+        min-width: 150px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-email-field label="Email"></vaadin-email-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Placeholder</h2>
+      <div>
+        <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Readonly</h2>
+      <div>
+        <vaadin-email-field label="Email" readonly></vaadin-email-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-email-field label="Email" disabled></vaadin-email-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error message</h2>
+      <div>
+        <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Helper text</h2>
+      <div>
+        <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
+      </div>
+    </section>
+
+    <script type="module" src="./common.js" onload="document.body.removeAttribute('unresolved')"></script>
+  </body>
+</html>

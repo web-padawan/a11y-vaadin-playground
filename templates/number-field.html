@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Number Field</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: normal;
+        min-width: 150px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-number-field label="Number"></vaadin-number-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Placeholder</h2>
+      <div>
+        <vaadin-number-field label="Number" placeholder="qwerty"></vaadin-number-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>With controls</h2>
+      <div>
+        <vaadin-number-field label="Number" has-controls></vaadin-number-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-number-field label="Number" disabled></vaadin-number-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error message</h2>
+      <div>
+        <vaadin-number-field label="Number" required error-message="This field is required"></vaadin-number-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Helper text</h2>
+      <div>
+        <vaadin-number-field label="Number" helper-text="Positive number"></vaadin-number-field>
+      </div>
+    </section>
+
+    <script type="module" src="./common.js" onload="document.body.removeAttribute('unresolved')"></script>
+  </body>
+</html>

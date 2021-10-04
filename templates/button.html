@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Button</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: normal;
+        min-width: 150px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-button>Confirm</vaadin-button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-button disabled>Update</vaadin-button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Button with prefix</h2>
+      <div>
+        <vaadin-button>
+          <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
+          New
+        </vaadin-button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Button with icon</h2>
+      <div>
+        <vaadin-button>
+          <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
+          Sign out
+        </vaadin-button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Icon only button</h2>
+      <div>
+        <vaadin-button aria-label="Download" theme="icon">
+          <vaadin-icon icon="lumo:download"></vaadin-icon>
+        </vaadin-button>
+      </div>
+    </section>
+
+    <script type="module" src="./common.js" onload="document.body.removeAttribute('unresolved')"></script>
+  </body>
+</html>

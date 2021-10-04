@@ -1,0 +1,11 @@
+import "@vaadin/vaadin-button";
+import "@vaadin/vaadin-icon";
+import "@vaadin/vaadin-item";
+import "@vaadin/vaadin-list-box";
+import "@vaadin/vaadin-lumo-styles/vaadin-iconset.js";
+import "@vaadin/vaadin-select";
+import "@vaadin/vaadin-text-field/vaadin-email-field.js";
+import "@vaadin/vaadin-text-field/vaadin-number-field.js";
+import "@vaadin/vaadin-text-field/vaadin-password-field.js";
+import "@vaadin/vaadin-text-field/vaadin-text-area.js";
+import "@vaadin/vaadin-upload";

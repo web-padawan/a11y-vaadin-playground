@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Upload</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-upload></vaadin-upload>
+      </div>
+    </section>
+
+    <section>
+      <h2>Files</h2>
+      <div>
+        <vaadin-upload id="files"></vaadin-upload>
+      </div>
+    </section>
+
+    <script type="module" src="./common.js" onload="document.body.removeAttribute('unresolved')"></script>
+
+    <script>
+      const upload = document.querySelector("#files");
+      upload.files = [{ name: "Don Quixote.pdf" }, { name: "Hamlet.pdf", progress: 100, complete: true }];
+      // To show the start button
+      upload.files[0].held = true;
+      // To show the retry button
+      upload.files[0].error = "Could not upload file";
+    </script>
+  </body>
+</html>

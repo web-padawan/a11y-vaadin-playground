@@ -1,0 +1,16 @@
+{
+  "name": "v22",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "@vaadin/button": "^22.0.0-alpha6",
+    "@vaadin/email-field": "^22.0.0-alpha6",
+    "@vaadin/number-field": "^22.0.0-alpha6",
+    "@vaadin/password-field": "^22.0.0-alpha6",
+    "@vaadin/select": "^22.0.0-alpha6",
+    "@vaadin/text-area": "^22.0.0-alpha6",
+    "@vaadin/vaadin-icon": "^22.0.0-alpha6",
+    "@vaadin/vaadin-lumo-styles": "^22.0.0-alpha6",
+    "@vaadin/vaadin-upload": "^22.0.0-alpha6"
+  }
+}

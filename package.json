@@ -4,19 +4,10 @@
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
   "scripts": {
-    "dist": "rimraf dist && rollup -c rollup.config.js",
-    "format": "prettier index.html --write",
+    "dist": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup.v21.config.js && rollup -c rollup.v22.config.js",
+    "format": "prettier index.html tmp --write",
+    "postinstall": "./scripts/install.sh",
     "start": "web-dev-server --node-resolve"
-  },
-  "dependencies": {
-    "@vaadin/button": "^22.0.0-alpha6",
-    "@vaadin/email-field": "^22.0.0-alpha6",
-    "@vaadin/number-field": "^22.0.0-alpha6",
-    "@vaadin/password-field": "^22.0.0-alpha6",
-    "@vaadin/select": "^22.0.0-alpha6",
-    "@vaadin/text-area": "^22.0.0-alpha6",
-    "@vaadin/vaadin-icon": "^22.0.0-alpha6",
-    "@vaadin/vaadin-upload": "^22.0.0-alpha6"
   },
   "devDependencies": {
     "@web/dev-server": "^0.1.22",

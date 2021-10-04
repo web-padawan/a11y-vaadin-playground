@@ -2,17 +2,14 @@
 
 <html>
   <head>
-    <title>Demo</title>
+    <title>Vaadin playground</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         margin: 0;
-        font-family: var(--lumo-font-family);
-      }
-
-      * {
-        box-sizing: border-box;
+        padding: 0.5rem 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", Helvetica, Arial, sans-serif;
       }
 
       .container {
@@ -24,48 +21,72 @@
       }
 
       section {
-        min-width: 450px;
-        margin: 1rem;
-        padding: 1rem;
-        border: solid 1px #ccc;
-      }
-
-      footer {
-        padding: 1rem;
-        text-align: center;
+        margin: 0.5rem 1rem;
       }
 
       h2 {
-        margin: 0 0 1rem;
-        font-size: 1.25rem;
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+        text-align: center;
       }
 
-      .row .label {
-        margin: 8px 0;
+      .row {
+        display: flex;
+        flex-wrap: wrap;
       }
 
-      .grid {
-        display: grid;
-        grid-template-columns: 150px 200px;
+      .card {
+        margin: 0.5rem;
+        position: relative;
+        border: 1px solid #e2e2e2;
       }
 
-      @media (max-width: 480px) {
+      .version {
+        color: white;
+        padding: 2px;
+        text-align: center;
+      }
+
+      .v21 {
+        background-color: salmon;
+      }
+
+      .v22 {
+        background-color: green;
+      }
+
+      a.external {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 1.75rem;
+        right: 0.5rem;
+        background: lightblue;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        color: #333;
+        text-decoration: none;
+        opacity: 0.75;
+      }
+
+      a.external:hover {
+        opacity: 1;
+      }
+
+      footer {
+        text-align: center;
+      }
+
+      @media (max-width: 939px) {
+        h2 {
+          margin-inline-start: 0.5rem;
+          text-align: initial;
+        }
+
         section {
-          width: 100%;
-          min-width: auto;
-          margin: 1rem 0 0;
-          padding-top: 0;
-          border: none;
-          border-bottom: solid 1px #ccc;
-        }
-
-        .grid {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .label {
-          margin: 8px 0 4px;
+          padding: 0;
         }
       }
     </style>
@@ -74,39 +95,16 @@
     <div class="container">
       <section>
         <h2>Button</h2>
-
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-button>Confirm</vaadin-button>
+        <div class="row">
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/button.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/button.html" width="400" height="260" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-button disabled>Update</vaadin-button>
-          </div>
-
-          <div class="label">Button with prefix</div>
-          <div>
-            <vaadin-button>
-              <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
-              New
-            </vaadin-button>
-          </div>
-
-          <div class="label">Button with icon</div>
-          <div>
-            <vaadin-button>
-              <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
-              Sign out
-            </vaadin-button>
-          </div>
-
-          <div class="label">Icon only button</div>
-          <div>
-            <vaadin-button aria-label="Download" theme="icon">
-              <vaadin-icon icon="lumo:download"></vaadin-icon>
-            </vaadin-button>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/button.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/button.html" width="400" height="260" frameborder="0"></iframe>
           </div>
         </div>
       </section>
@@ -114,190 +112,95 @@
       <section>
         <h2>Upload</h2>
         <div class="row">
-          <div class="label">Default</div>
-          <vaadin-upload></vaadin-upload>
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/upload.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/upload.html" width="400" height="360" frameborder="0"></iframe>
+          </div>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/upload.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/upload.html" width="400" height="360" frameborder="0"></iframe>
+          </div>
         </div>
+      </section>
+
+      <section>
+        <h2>Email Field</h2>
         <div class="row">
-          <div class="label">File list</div>
-          <vaadin-upload id="files"></vaadin-upload>
-        </div>
-      </section>
-
-      <section>
-        <h2>Email field</h2>
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-email-field label="Email"></vaadin-email-field>
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/email-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/email-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Placeholder</div>
-          <div>
-            <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
-          </div>
-
-          <div class="label">Readonly</div>
-          <div>
-            <vaadin-email-field label="Email" readonly></vaadin-email-field>
-          </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-email-field label="Email" disabled></vaadin-email-field>
-          </div>
-
-          <div class="label">Error message</div>
-          <div>
-            <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
-          </div>
-
-          <div class="label">Helper text</div>
-          <div>
-            <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/email-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/email-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Password field</h2>
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-password-field label="Password"></vaadin-password-field>
+        <h2>Password Field</h2>
+        <div class="row">
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/password-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/password-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Placeholder</div>
-          <div>
-            <vaadin-password-field label="Password" placeholder="qwerty"></vaadin-password-field>
-          </div>
-
-          <div class="label">Reveal button hidden</div>
-          <div>
-            <vaadin-password-field label="Password" reveal-button-hidden></vaadin-password-field>
-          </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-password-field label="Password" disabled></vaadin-password-field>
-          </div>
-
-          <div class="label">Error message</div>
-          <div>
-            <vaadin-password-field
-              label="Password"
-              required
-              error-message="This field is required"
-            ></vaadin-password-field>
-          </div>
-
-          <div class="label">Helper text</div>
-          <div>
-            <vaadin-password-field label="Password" helper-text="At least 8 characters"></vaadin-password-field>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/password-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/password-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Number field</h2>
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-number-field label="Quantity"></vaadin-number-field>
+        <h2>Number Field</h2>
+        <div class="row">
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/number-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/number-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Placeholder</div>
-          <div>
-            <vaadin-number-field label="Quantity" placeholder="42"></vaadin-number-field>
-          </div>
-
-          <div class="label">With controls</div>
-          <div>
-            <vaadin-number-field label="Quantity" has-controls></vaadin-number-field>
-          </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-number-field label="Quantity" disabled></vaadin-number-field>
-          </div>
-
-          <div class="label">Error message</div>
-          <div>
-            <vaadin-number-field label="Quantity" required error-message="This field is required"></vaadin-number-field>
-          </div>
-
-          <div class="label">Helper text</div>
-          <div>
-            <vaadin-number-field label="Quantity" helper-text="1 or more"></vaadin-number-field>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/number-field.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/number-field.html" width="400" height="520" frameborder="0"></iframe>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Text area</h2>
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-text-area label="Comment"></vaadin-text-area>
+        <h2>Text Area</h2>
+        <div class="row">
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/text-area.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/text-area.html" width="400" height="650" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Placeholder</div>
-          <div>
-            <vaadin-text-area label="Comment" placeholder="Some feedback"></vaadin-text-area>
-          </div>
-
-          <div class="label">Readonly</div>
-          <div>
-            <vaadin-text-area label="Comment" readonly></vaadin-text-area>
-          </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-text-area label="Comment" disabled></vaadin-text-area>
-          </div>
-
-          <div class="label">Error message</div>
-          <div>
-            <vaadin-text-area label="Comment" required error-message="This field is required"></vaadin-text-area>
-          </div>
-
-          <div class="label">Helper text</div>
-          <div>
-            <vaadin-text-area label="Comment" helper-text="Share your feedback"></vaadin-text-area>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/text-area.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/text-area.html" width="400" height="650" frameborder="0"></iframe>
           </div>
         </div>
       </section>
 
       <section>
         <h2>Select</h2>
-        <div class="grid">
-          <div class="label">Default</div>
-          <div>
-            <vaadin-select label="Role"></vaadin-select>
+        <div class="row">
+          <div class="card">
+            <div class="version v21">21.0.2</div>
+            <a class="external" target="_blank" href="/pages/v21/select.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v21/select.html" width="400" height="520" frameborder="0"></iframe>
           </div>
-
-          <div class="label">Placeholder</div>
-          <div>
-            <vaadin-select label="Role" placeholder="Select a role"></vaadin-select>
-          </div>
-
-          <div class="label">Readonly</div>
-          <div>
-            <vaadin-select label="Role" value="User" readonly></vaadin-select>
-          </div>
-
-          <div class="label">Disabled</div>
-          <div>
-            <vaadin-select label="Role" disabled></vaadin-select>
-          </div>
-
-          <div class="label">Error message</div>
-          <div>
-            <vaadin-select label="Role" required error-message="This field is required"></vaadin-select>
-          </div>
-
-          <div class="label">Helper text</div>
-          <div>
-            <vaadin-select label="Role" helper-text="Reload is required"></vaadin-select>
+          <div class="card">
+            <div class="version v22">22.0.0-alpha6</div>
+            <a class="external" target="_blank" href="/pages/v22/select.html" title="Open in new tab">↗</a>
+            <iframe src="/pages/v22/select.html" width="400" height="520" frameborder="0"></iframe>
           </div>
         </div>
       </section>
@@ -305,49 +208,20 @@
 
     <div class="container">
       <footer>
-        <p>Vaadin web components <b>22.0.0-alpha6</b>. Last updated <b>14 September 2021</b>.</p>
-        <p>Found an issue? <a href="https://github.com/vaadin/web-components/issues/new?assignees=&labels=i%3A+needs+triage&template=bug_report.md&title=">Please let us know</a>.</p>
+        <p>
+          Last updated:
+          <b>4 October 2021</b>
+        </p>
+        <p>
+          Found an issue?
+          <a
+            href="https://github.com/vaadin/web-components/issues/new?assignees=&labels=i%3A+needs+triage&template=bug_report.md&title="
+            target="_blank"
+          >
+            Please let us know
+          </a>
+        </p>
       </footer>
     </div>
-
-    <script type="module">
-      import "@vaadin/button";
-      import "@vaadin/email-field";
-      import "@vaadin/number-field";
-      import "@vaadin/password-field";
-      import "@vaadin/text-area";
-      import "@vaadin/vaadin-icon";
-      import "@vaadin/vaadin-item";
-      import "@vaadin/vaadin-list-box";
-      import "@vaadin/vaadin-lumo-styles/vaadin-iconset.js";
-      import "@vaadin/select";
-      import "@vaadin/vaadin-upload";
-
-      const upload = document.querySelector("#files");
-      upload.files = [{ name: "Don Quixote.pdf" }, { name: "Hamlet.pdf", progress: 100, complete: true }];
-      // To show the start button
-      upload.files[0].held = true;
-      // To show the retry button
-      upload.files[0].error = "Could not upload file";
-
-      document.querySelectorAll("vaadin-select").forEach((select) => {
-        select.renderer = function (root, select) {
-          if (root.firstChild) {
-            return;
-          }
-
-          const listBox = document.createElement("vaadin-list-box");
-          // append 3 <vaadin-item> elements
-          ["Admin", "Moderator", "User"].forEach(function (name) {
-            const item = document.createElement("vaadin-item");
-            item.textContent = name;
-            item.setAttribute("label", name);
-            listBox.appendChild(item);
-          });
-
-          root.appendChild(listBox);
-        };
-      });
-    </script>
   </body>
 </html>
