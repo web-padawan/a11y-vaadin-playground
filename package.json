@@ -4,9 +4,10 @@
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
   "scripts": {
-    "dist": "rimraf dist && rollup -c rollup.config.js && rollup -c rollup.v21.config.js && rollup -c rollup.v22.config.js",
+    "dist": "npm run copy && rimraf dist && rollup -c rollup.config.js && rollup -c rollup.v21.config.js && rollup -c rollup.v22.config.js",
+    "copy": "./scripts/install.sh",
     "format": "prettier index.html tmp --write",
-    "postinstall": "./scripts/install.sh",
+    "postinstall": "npm run copy",
     "start": "web-dev-server --node-resolve"
   },
   "devDependencies": {
