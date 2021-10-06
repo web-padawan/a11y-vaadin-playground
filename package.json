@@ -4,7 +4,7 @@
   "author": "Vaadin Ltd",
   "license": "Apache-2.0",
   "scripts": {
-    "dist": "npm run copy && rimraf dist && rollup -c rollup.config.js && rollup -c rollup.v21.config.js && rollup -c rollup.v22.config.js",
+    "dist": "npm run copy && rimraf dist && rollup -c && rollup -c --environment vaadin:21 && rollup -c --environment vaadin:22",
     "copy": "./scripts/install.sh",
     "format": "prettier index.html tmp --write",
     "postinstall": "npm run copy",
