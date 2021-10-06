@@ -28,6 +28,22 @@
         margin: 0 0 0.5rem;
         font-size: 1.5rem;
         text-align: center;
+        position: relative;
+      }
+
+      h2 > a {
+        text-decoration: none;
+        position: absolute;
+        width: 1em;
+        margin-inline-start: -1em;
+        text-align: center;
+        transition: opacity 0.2s 0.4s;
+        color: rgb(0, 88, 192);
+      }
+
+      h2:not(:hover) > a {
+        opacity: 0;
+        transition-delay: 0ms;
       }
 
       .row {
@@ -94,7 +110,10 @@
   <body>
     <div class="container">
       <section>
-        <h2>Button</h2>
+        <h2 id="button">
+          <a href="#button">#</a>
+          Button
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -110,7 +129,10 @@
       </section>
 
       <section>
-        <h2>Upload</h2>
+        <h2 id="upload">
+          <a href="#upload">#</a>
+          Upload
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -126,7 +148,10 @@
       </section>
 
       <section>
-        <h2>Email Field</h2>
+        <h2 id="email-field">
+          <a href="#email-field">#</a>
+          Email Field
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -142,7 +167,10 @@
       </section>
 
       <section>
-        <h2>Password Field</h2>
+        <h2 id="password-field">
+          <a href="#password-field">#</a>
+          Password Field
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -158,7 +186,10 @@
       </section>
 
       <section>
-        <h2>Number Field</h2>
+        <h2 id="number-field">
+          <a href="#number-field">#</a>
+          Number Field
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -174,7 +205,10 @@
       </section>
 
       <section>
-        <h2>Text Area</h2>
+        <h2 id="text-area">
+          <a href="#text-area">#</a>
+          Text Area
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
@@ -190,7 +224,10 @@
       </section>
 
       <section>
-        <h2>Select</h2>
+        <h2 id="select">
+          <a href="#select">#</a>
+          Select
+        </h2>
         <div class="row">
           <div class="card">
             <div class="version v21">21.0.2</div>
