@@ -40,7 +40,7 @@
     <section>
       <h2>Readonly</h2>
       <div>
-        <vaadin-checkbox-group label="Permissions" theme="vertical">
+        <vaadin-checkbox-group label="Permissions" theme="vertical" readonly>
           <vaadin-checkbox value="read" checked></vaadin-checkbox>
           <vaadin-checkbox value="edit"></vaadin-checkbox>
           <vaadin-checkbox value="delete"></vaadin-checkbox>
@@ -51,7 +51,7 @@
     <section>
       <h2>Disabled</h2>
       <div>
-        <vaadin-checkbox-group label="Permissions" theme="vertical">
+        <vaadin-checkbox-group label="Permissions" theme="vertical" disabled>
           <vaadin-checkbox value="read" checked></vaadin-checkbox>
           <vaadin-checkbox value="edit"></vaadin-checkbox>
           <vaadin-checkbox value="delete"></vaadin-checkbox>
@@ -95,10 +95,6 @@
           checkboxes[1][prop] = "Edit";
           checkboxes[2][prop] = "Delete";
         });
-
-        // TODO: setting these in HTML make all checkboxes selected
-        groups[1].readonly = true;
-        groups[2].disabled = true;
 
         requestAnimationFrame(() => {
           document.body.removeAttribute("unresolved");
