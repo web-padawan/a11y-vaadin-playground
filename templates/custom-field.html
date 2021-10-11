@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Custom Field</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 1.25rem 0 0.25rem;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      section:first-of-type h2 {
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-custom-field label="Phone number">
+          <vaadin-select style="width: 6rem" value="+358"></vaadin-select>
+          <vaadin-text-field
+            prevent-invalid-input
+            pattern="[0-9]*"
+            maxlength="4"
+            style="width: 5rem"
+          ></vaadin-text-field>
+          <vaadin-number-field></vaadin-number-field>
+        </vaadin-custom-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Readonly</h2>
+      <div>
+        <vaadin-custom-field label="Phone number" readonly>
+          <vaadin-select style="width: 6rem" value="+358" readonly></vaadin-select>
+          <vaadin-text-field
+            prevent-invalid-input
+            pattern="[0-9]*"
+            maxlength="4"
+            style="width: 5rem"
+            value="44"
+            readonly
+          ></vaadin-text-field>
+          <vaadin-number-field value="7795657" readonly></vaadin-number-field>
+        </vaadin-custom-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-custom-field label="Phone number" disabled>
+          <vaadin-select style="width: 6rem" value="+358" disabled></vaadin-select>
+          <vaadin-text-field
+            prevent-invalid-input
+            pattern="[0-9]*"
+            maxlength="4"
+            style="width: 5rem"
+            value="44"
+            disabled
+          ></vaadin-text-field>
+          <vaadin-number-field value="7795657" disabled></vaadin-number-field>
+        </vaadin-custom-field>
+      </div>
+    </section>
+
+    <section>
+      <h2>Helper text</h2>
+      <div>
+        <vaadin-custom-field label="Phone number" helper-text="We never send spam">
+          <vaadin-select style="width: 6rem" value="+358"></vaadin-select>
+          <vaadin-text-field
+            prevent-invalid-input
+            pattern="[0-9]*"
+            maxlength="4"
+            style="width: 5rem"
+          ></vaadin-text-field>
+          <vaadin-number-field></vaadin-number-field>
+        </vaadin-custom-field>
+      </div>
+    </section>
+
+    <script type="module">
+      (async () => {
+        await import("./common.js");
+
+        document.querySelectorAll("vaadin-select").forEach((select) => {
+          select.focusElement.setAttribute("aria-label", "Country code");
+
+          select.renderer = function (root, select) {
+            if (root.firstChild) {
+              return;
+            }
+
+            const listBox = document.createElement("vaadin-list-box");
+            // append 3 <vaadin-item> elements
+            ["+358", "+46", "+34", "+380"].forEach(function (name) {
+              const item = document.createElement("vaadin-item");
+              item.textContent = name;
+              item.setAttribute("label", name);
+              listBox.appendChild(item);
+            });
+
+            root.appendChild(listBox);
+          };
+        });
+
+        document.querySelectorAll("vaadin-text-field").forEach((field) => {
+          field.focusElement.setAttribute("aria-label", "Area code");
+        });
+
+        document.querySelectorAll("vaadin-number-field").forEach((field) => {
+          field.focusElement.setAttribute("aria-label", "Number");
+        });
+
+        requestAnimationFrame(() => {
+          document.body.removeAttribute("unresolved");
+        });
+      })();
+    </script>
+  </body>
+</html>

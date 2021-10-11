@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Date Time Picker</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 1.25rem 0 0.25rem;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      section:first-of-type h2 {
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-date-time-picker label="Meeting date and time"></vaadin-date-time-picker>
+      </div>
+    </section>
+
+    <section>
+      <h2>Readonly</h2>
+      <div>
+        <vaadin-date-time-picker label="Meeting date and time" readonly></vaadin-date-time-picker>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-date-time-picker label="Meeting date and time" disabled></vaadin-date-time-picker>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error message</h2>
+      <div>
+        <vaadin-date-time-picker
+          label="Meeting date and time"
+          required
+          error-message="This field is required"
+        ></vaadin-date-time-picker>
+      </div>
+    </section>
+
+    <section>
+      <h2>Helper text</h2>
+      <div>
+        <vaadin-date-time-picker
+          label="Meeting date and time"
+          helper-text="Book a meeting room next"
+        ></vaadin-date-time-picker>
+      </div>
+    </section>
+
+    <script type="module">
+      (async () => {
+        await import("./common.js");
+
+        document.querySelectorAll("vaadin-date-time-picker-date-picker").forEach((picker) => {
+          picker.focusElement.setAttribute("aria-label", "Date");
+        });
+
+        document.querySelectorAll("vaadin-date-time-picker-time-picker").forEach((picker) => {
+          picker.focusElement.setAttribute("aria-label", "Time");
+        });
+
+        requestAnimationFrame(() => {
+          document.body.removeAttribute("unresolved");
+        });
+      })();
+    </script>
+  </body>
+</html>

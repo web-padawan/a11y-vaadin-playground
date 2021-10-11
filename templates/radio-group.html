@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Radio Group</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: normal;
+        min-width: 150px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-radio-group label="Delivery time" theme="vertical">
+          <vaadin-radio-button name="time-1"></vaadin-radio-button>
+          <vaadin-radio-button name="time-1"></vaadin-radio-button>
+          <vaadin-radio-button name="time-1"></vaadin-radio-button>
+        </vaadin-radio-group>
+      </div>
+    </section>
+
+    <section>
+      <h2>Readonly</h2>
+      <div>
+        <vaadin-radio-group label="Delivery time" theme="vertical" readonly>
+          <vaadin-radio-button name="time-2" checked></vaadin-radio-button>
+          <vaadin-radio-button name="time-2"></vaadin-radio-button>
+          <vaadin-radio-button name="time-2"></vaadin-radio-button>
+        </vaadin-radio-group>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-radio-group label="Delivery time" theme="vertical" disabled>
+          <vaadin-radio-button name="time-3" checked></vaadin-radio-button>
+          <vaadin-radio-button name="time-3"></vaadin-radio-button>
+          <vaadin-radio-button name="time-3"></vaadin-radio-button>
+        </vaadin-radio-group>
+      </div>
+    </section>
+
+    <section>
+      <h2>Error message</h2>
+      <div>
+        <vaadin-radio-group label="Delivery time" theme="vertical" required error-message="This field is required">
+          <vaadin-radio-button name="time-4"></vaadin-radio-button>
+          <vaadin-radio-button name="time-4"></vaadin-radio-button>
+          <vaadin-radio-button name="time-4"></vaadin-radio-button>
+        </vaadin-radio-group>
+      </div>
+    </section>
+
+    <section>
+      <h2>Helper Text</h2>
+      <div>
+        <vaadin-radio-group label="Delivery time" theme="vertical" helper-text="We call 1 hour before">
+          <vaadin-radio-button name="time-5"></vaadin-radio-button>
+          <vaadin-radio-button name="time-5"></vaadin-radio-button>
+          <vaadin-radio-button name="time-5"></vaadin-radio-button>
+        </vaadin-radio-group>
+      </div>
+    </section>
+
+    <script type="module">
+      (async () => {
+        await import("./common.js");
+
+        const prop = customElements.get("vaadin-radio-button").version.startsWith("21") ? "textContent" : "label";
+
+        // Initialize radio-buttons based on Vaadin version to avoid warnings
+        document.querySelectorAll("vaadin-radio-group").forEach((group) => {
+          const radios = group.querySelectorAll("vaadin-radio-button");
+          radios[0].value = radios[0][prop] = "Read";
+          radios[1].value = radios[1][prop] = "Edit";
+          radios[2].value = radios[2][prop] = "Delete";
+        });
+
+        requestAnimationFrame(() => {
+          document.body.removeAttribute("unresolved");
+        });
+      })();
+    </script>
+  </body>
+</html>

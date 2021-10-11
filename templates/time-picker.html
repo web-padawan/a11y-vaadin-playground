@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title>Email Field</title>
+    <title>Time Picker</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./shared.css" />
@@ -29,49 +29,59 @@
     <section>
       <h2>Default</h2>
       <div>
-        <vaadin-email-field label="Email"></vaadin-email-field>
+        <vaadin-time-picker label="Appointment time"></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Placeholder</h2>
       <div>
-        <vaadin-email-field label="Email" placeholder="user@example.com"></vaadin-email-field>
+        <vaadin-time-picker label="Appointment time" placeholder="10:00"></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Clear button</h2>
       <div>
-        <vaadin-email-field label="Email" value="user@example.com" clear-button-visible></vaadin-email-field>
+        <vaadin-time-picker label="Appointment time" value="10:00" clear-button-visible></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Readonly</h2>
       <div>
-        <vaadin-email-field label="Email" readonly></vaadin-email-field>
+        <vaadin-time-picker label="Appointment time" readonly></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Disabled</h2>
       <div>
-        <vaadin-email-field label="Email" disabled></vaadin-email-field>
+        <vaadin-time-picker label="Appointment time" disabled></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Error message</h2>
       <div>
-        <vaadin-email-field label="Email" required error-message="This field is required"></vaadin-email-field>
+        <vaadin-time-picker
+          label="Appointment time"
+          required
+          error-message="This field is required"
+        ></vaadin-time-picker>
       </div>
     </section>
 
     <section>
       <h2>Helper text</h2>
       <div>
-        <vaadin-email-field label="Email" helper-text="Your work email"></vaadin-email-field>
+        <vaadin-time-picker
+          label="Appointment time"
+          min="08:00"
+          max="16:00"
+          step="1800"
+          helper-text="Open 8:00-16:00"
+        ></vaadin-time-picker>
       </div>
     </section>
 

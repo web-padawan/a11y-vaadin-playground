@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Checkbox</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared.css" />
+    <style>
+      [unresolved] {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+      }
+
+      h2 {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        font-weight: normal;
+        min-width: 150px;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <section>
+      <h2>Default</h2>
+      <div>
+        <vaadin-checkbox></vaadin-checkbox>
+      </div>
+    </section>
+
+    <section>
+      <h2>Checked</h2>
+      <div>
+        <vaadin-checkbox checked></vaadin-checkbox>
+      </div>
+    </section>
+
+    <section>
+      <h2>Indeterminate</h2>
+      <div>
+        <vaadin-checkbox indeterminate></vaadin-checkbox>
+      </div>
+    </section>
+
+    <section>
+      <h2>Disabled</h2>
+      <div>
+        <vaadin-checkbox disabled></vaadin-checkbox>
+      </div>
+    </section>
+
+    <script type="module">
+      (async () => {
+        await import("./common.js");
+
+        const prop = customElements.get("vaadin-checkbox").version.startsWith("21") ? "textContent" : "label";
+
+        const checkboxes = document.querySelectorAll("vaadin-checkbox");
+        checkboxes.forEach((checkbox) => {
+          checkbox[prop] = "Do not remember me";
+        });
+
+        requestAnimationFrame(() => {
+          document.body.removeAttribute("unresolved");
+        });
+      })();
+    </script>
+  </body>
+</html>

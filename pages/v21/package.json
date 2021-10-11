@@ -4,10 +4,16 @@
   "version": "0.0.0",
   "dependencies": {
     "@vaadin/vaadin-button": "^21.0.0",
+    "@vaadin/vaadin-checkbox": "^21.0.0",
+    "@vaadin/vaadin-custom-field": "^21.0.0",
+    "@vaadin/vaadin-date-picker": "^21.0.0",
+    "@vaadin/vaadin-date-time-picker": "^21.0.0",
+    "@vaadin/vaadin-icon": "^21.0.0",
     "@vaadin/vaadin-lumo-styles": "^21.0.0",
+    "@vaadin/vaadin-radio-button": "^21.0.0",
     "@vaadin/vaadin-select": "^21.0.0",
     "@vaadin/vaadin-text-field": "^21.0.0",
-    "@vaadin/vaadin-icon": "^21.0.0",
+    "@vaadin/vaadin-time-picker": "^21.0.0",
     "@vaadin/vaadin-upload": "^21.0.0"
   }
 }
