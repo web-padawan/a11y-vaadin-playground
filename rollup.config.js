@@ -10,5 +10,5 @@ export default {
   output: {
     dir: version ? `./dist/pages/v${version}` : './dist'
   },
-  plugins: [html({ minify: true }), nodeResolve(), terser()]
+  plugins: [html({ minify: false }), nodeResolve(), terser()]
 };
