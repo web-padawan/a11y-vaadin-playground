@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,21 +27,21 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-button>Confirm</vaadin-button>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-button disabled>Update</vaadin-button>
       </div>
     </section>
 
     <section>
-      <h2>Button with prefix</h2>
+      <div class="label">Button with prefix</div>
       <div>
         <vaadin-button>
           <div slot="prefix" aria-hidden="true" style="width: 20px">+</div>
@@ -51,7 +51,7 @@
     </section>
 
     <section>
-      <h2>Button with icon</h2>
+      <div class="label">Button with icon</div>
       <div>
         <vaadin-button>
           <vaadin-icon slot="prefix" icon="lumo:user"></vaadin-icon>
@@ -61,7 +61,7 @@
     </section>
 
     <section>
-      <h2>Icon only button</h2>
+      <div class="label">Icon only button</div>
       <div>
         <vaadin-button aria-label="Download" theme="icon">
           <vaadin-icon icon="lumo:download"></vaadin-icon>

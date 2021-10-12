@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,49 +27,49 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-text-field label="Address"></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Placeholder</h2>
+      <div class="label">Placeholder</div>
       <div>
         <vaadin-text-field label="Address" placeholder="Ruukinkatu 2"></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Clear button</h2>
+      <div class="label">Clear button</div>
       <div>
         <vaadin-text-field label="Address" value="Ruukinkatu 2" clear-button-visible></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Readonly</h2>
+      <div class="label">Readonly</div>
       <div>
         <vaadin-text-field label="Address" readonly></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-text-field label="Address" disabled></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Error message</h2>
+      <div class="label">Error message</div>
       <div>
         <vaadin-text-field label="Address" required error-message="This field is required"></vaadin-text-field>
       </div>
     </section>
 
     <section>
-      <h2>Helper text</h2>
+      <div class="label">Helper text</div>
       <div>
         <vaadin-text-field label="Address" helper-text="Your home address"></vaadin-text-field>
       </div>

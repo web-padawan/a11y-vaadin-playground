@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,42 +27,42 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-text-area label="Comment"></vaadin-text-area>
       </div>
     </section>
 
     <section>
-      <h2>Placeholder</h2>
+      <div class="label">Placeholder</div>
       <div>
         <vaadin-text-area label="Comment" placeholder="Share your feedback"></vaadin-text-area>
       </div>
     </section>
 
     <section>
-      <h2>Readonly</h2>
+      <div class="label">Readonly</div>
       <div>
         <vaadin-text-area label="Comment" readonly></vaadin-text-area>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-text-area label="Comment" disabled></vaadin-text-area>
       </div>
     </section>
 
     <section>
-      <h2>Error message</h2>
+      <div class="label">Error message</div>
       <div>
         <vaadin-text-area label="Comment" required error-message="This field is required"></vaadin-text-area>
       </div>
     </section>
 
     <section>
-      <h2>Helper text</h2>
+      <div class="label">Helper text</div>
       <div>
         <vaadin-text-area label="Comment" helper-text="Help us improve"></vaadin-text-area>
       </div>

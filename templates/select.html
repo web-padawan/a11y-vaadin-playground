@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,42 +27,42 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-select label="Role"></vaadin-select>
       </div>
     </section>
 
     <section>
-      <h2>Placeholder</h2>
+      <div class="label">Placeholder</div>
       <div>
         <vaadin-select label="Role" placeholder="Select a role"></vaadin-select>
       </div>
     </section>
 
     <section>
-      <h2>Readonly</h2>
+      <div class="label">Readonly</div>
       <div>
         <vaadin-select label="Role" readonly></vaadin-select>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-select label="Role" disabled></vaadin-select>
       </div>
     </section>
 
     <section>
-      <h2>Error message</h2>
+      <div class="label">Error message</div>
       <div>
         <vaadin-select label="Role" required error-message="This field is required"></vaadin-select>
       </div>
     </section>
 
     <section>
-      <h2>Helper text</h2>
+      <div class="label">Helper text</div>
       <div>
         <vaadin-select label="Role" helper-text="Reload is required"></vaadin-select>
       </div>

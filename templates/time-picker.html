@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,42 +27,42 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-time-picker label="Appointment time"></vaadin-time-picker>
       </div>
     </section>
 
     <section>
-      <h2>Placeholder</h2>
+      <div class="label">Placeholder</div>
       <div>
         <vaadin-time-picker label="Appointment time" placeholder="10:00"></vaadin-time-picker>
       </div>
     </section>
 
     <section>
-      <h2>Clear button</h2>
+      <div class="label">Clear button</div>
       <div>
         <vaadin-time-picker label="Appointment time" value="10:00" clear-button-visible></vaadin-time-picker>
       </div>
     </section>
 
     <section>
-      <h2>Readonly</h2>
+      <div class="label">Readonly</div>
       <div>
         <vaadin-time-picker label="Appointment time" readonly></vaadin-time-picker>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-time-picker label="Appointment time" disabled></vaadin-time-picker>
       </div>
     </section>
 
     <section>
-      <h2>Error message</h2>
+      <div class="label">Error message</div>
       <div>
         <vaadin-time-picker
           label="Appointment time"
@@ -73,7 +73,7 @@
     </section>
 
     <section>
-      <h2>Helper text</h2>
+      <div class="label">Helper text</div>
       <div>
         <vaadin-time-picker
           label="Appointment time"

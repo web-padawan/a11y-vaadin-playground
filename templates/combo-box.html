@@ -12,7 +12,7 @@
         transition: opacity 0.1s linear;
       }
 
-      h2 {
+      .label {
         margin: 0;
         font-size: 1rem;
         font-weight: normal;
@@ -27,42 +27,42 @@
   </head>
   <body unresolved>
     <section>
-      <h2>Default</h2>
+      <div class="label">Default</div>
       <div>
         <vaadin-combo-box label="User" allow-custom-value></vaadin-combo-box>
       </div>
     </section>
 
     <section>
-      <h2>Placeholder</h2>
+      <div class="label">Placeholder</div>
       <div>
         <vaadin-combo-box label="User" allow-custom-value placeholder="Jane Doe"></vaadin-combo-box>
       </div>
     </section>
 
     <section>
-      <h2>Clear button</h2>
+      <div class="label">Clear button</div>
       <div>
         <vaadin-combo-box label="User" allow-custom-value value="Lillian Perez" clear-button-visible></vaadin-combo-box>
       </div>
     </section>
 
     <section>
-      <h2>Readonly</h2>
+      <div class="label">Readonly</div>
       <div>
         <vaadin-combo-box label="User" readonly></vaadin-combo-box>
       </div>
     </section>
 
     <section>
-      <h2>Disabled</h2>
+      <div class="label">Disabled</div>
       <div>
         <vaadin-combo-box label="User" disabled></vaadin-combo-box>
       </div>
     </section>
 
     <section>
-      <h2>Error message</h2>
+      <div class="label">Error message</div>
       <div>
         <vaadin-combo-box
           label="User"
@@ -74,7 +74,7 @@
     </section>
 
     <section>
-      <h2>Helper text</h2>
+      <div class="label">Helper text</div>
       <div>
         <vaadin-combo-box label="User" allow-custom-value helper-text="Select or type a user"></vaadin-combo-box>
       </div>
