@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: "Accessibility issue"
+    url: https://github.com/vaadin/web-components/issues/new?assignees=&labels=a11y&template=a11y-test-finding.yml
+    about: Please report issues related to accessibility to Vaadin web components repository.
