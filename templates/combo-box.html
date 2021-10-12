@@ -29,35 +29,35 @@
     <section>
       <h2>Default</h2>
       <div>
-        <vaadin-combo-box label="Browser" allow-custom-value></vaadin-combo-box>
+        <vaadin-combo-box label="User" allow-custom-value></vaadin-combo-box>
       </div>
     </section>
 
     <section>
       <h2>Placeholder</h2>
       <div>
-        <vaadin-combo-box label="Browser" allow-custom-value placeholder="Firefox"></vaadin-combo-box>
+        <vaadin-combo-box label="User" allow-custom-value placeholder="Jane Doe"></vaadin-combo-box>
       </div>
     </section>
 
     <section>
       <h2>Clear button</h2>
       <div>
-        <vaadin-combo-box label="Browser" allow-custom-value value="Firefox" clear-button-visible></vaadin-combo-box>
+        <vaadin-combo-box label="User" allow-custom-value value="Lillian Perez" clear-button-visible></vaadin-combo-box>
       </div>
     </section>
 
     <section>
       <h2>Readonly</h2>
       <div>
-        <vaadin-combo-box label="Browser" readonly></vaadin-combo-box>
+        <vaadin-combo-box label="User" readonly></vaadin-combo-box>
       </div>
     </section>
 
     <section>
       <h2>Disabled</h2>
       <div>
-        <vaadin-combo-box label="Browser" disabled></vaadin-combo-box>
+        <vaadin-combo-box label="User" disabled></vaadin-combo-box>
       </div>
     </section>
 
@@ -65,7 +65,7 @@
       <h2>Error message</h2>
       <div>
         <vaadin-combo-box
-          label="Browser"
+          label="User"
           allow-custom-value
           required
           error-message="This field is required"
@@ -76,15 +76,20 @@
     <section>
       <h2>Helper text</h2>
       <div>
-        <vaadin-combo-box label="Browser" allow-custom-value helper-text="Select or type a browser"></vaadin-combo-box>
+        <vaadin-combo-box label="User" allow-custom-value helper-text="Select or type a user"></vaadin-combo-box>
       </div>
     </section>
 
     <script type="module" src="./common.js" onload="document.body.removeAttribute('unresolved')"></script>
-    <script>
-      document.querySelectorAll("vaadin-combo-box").forEach((comboBox) => {
-        comboBox.items = ["Chrome", "Safari", "Firefox", "Edge", "Opera", "Brave", "Vivaldi", "Samsung Internet"];
-      });
+    <script type="module">
+      (async () => {
+        const res = await fetch("https://demo.vaadin.com/demo-data/1.0/people?count=200");
+        const data = await res.json();
+
+        document.querySelectorAll("vaadin-combo-box").forEach((comboBox) => {
+          comboBox.items = data.result.map((user) => `${user.firstName} ${user.lastName}`);
+        });
+      })();
     </script>
   </body>
 </html>
