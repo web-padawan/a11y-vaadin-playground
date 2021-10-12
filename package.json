@@ -7,6 +7,7 @@
     "dist": "npm run copy && rimraf dist && rollup -c && rollup -c --environment vaadin:21 && rollup -c --environment vaadin:22",
     "copy": "./scripts/install.sh",
     "format": "prettier index.html tmp --write",
+    "preinstall": "npm cache verify",
     "postinstall": "npm run copy",
     "start": "web-dev-server --node-resolve"
   },
