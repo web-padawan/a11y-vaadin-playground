@@ -34,8 +34,9 @@
             pattern="[0-9]*"
             maxlength="4"
             style="width: 5rem"
+            aria-label="Area code"
           ></vaadin-text-field>
-          <vaadin-number-field></vaadin-number-field>
+          <vaadin-number-field aria-label="Number"></vaadin-number-field>
         </vaadin-custom-field>
       </div>
     </section>
@@ -52,8 +53,9 @@
             style="width: 5rem"
             value="44"
             readonly
+            aria-label="Area code"
           ></vaadin-text-field>
-          <vaadin-number-field value="7795657" readonly></vaadin-number-field>
+          <vaadin-number-field value="7795657" readonly aria-label="Number"></vaadin-number-field>
         </vaadin-custom-field>
       </div>
     </section>
@@ -70,8 +72,9 @@
             style="width: 5rem"
             value="44"
             disabled
+            aria-label="Area code"
           ></vaadin-text-field>
-          <vaadin-number-field value="7795657" disabled></vaadin-number-field>
+          <vaadin-number-field value="7795657" disabled aria-label="Number"></vaadin-number-field>
         </vaadin-custom-field>
       </div>
     </section>
@@ -86,8 +89,9 @@
             pattern="[0-9]*"
             maxlength="4"
             style="width: 5rem"
+            aria-label="Area code"
           ></vaadin-text-field>
-          <vaadin-number-field></vaadin-number-field>
+          <vaadin-number-field aria-label="Number"></vaadin-number-field>
         </vaadin-custom-field>
       </div>
     </section>
@@ -115,14 +119,6 @@
 
             root.appendChild(listBox);
           };
-        });
-
-        document.querySelectorAll("vaadin-text-field").forEach((field) => {
-          field.focusElement.setAttribute("aria-label", "Area code");
-        });
-
-        document.querySelectorAll("vaadin-number-field").forEach((field) => {
-          field.focusElement.setAttribute("aria-label", "Number");
         });
 
         requestAnimationFrame(() => {
