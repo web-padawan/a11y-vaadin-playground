@@ -106,14 +106,27 @@
         text-align: center;
       }
 
-      @media (max-width: 939px) {
+      @media (max-width: 1023px) {
+        .container {
+          display: block;
+          max-width: 420px;
+          margin: 0 auto;
+        }
+
         h2 {
-          margin-inline-start: 0.5rem;
-          text-align: initial;
+          text-align: center;
         }
 
         section {
+          margin: 0.5rem 0;
           padding: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          margin: 0.5rem 0;
+          outline: none;
         }
       }
     </style>
@@ -634,5 +647,16 @@
         </p>
       </footer>
     </div>
+
+    <script>
+      window.addEventListener("load", (event) => {
+        const width = window.innerWidth;
+        if (width < 420) {
+          document.querySelectorAll("iframe").forEach((frame) => {
+            frame.setAttribute("width", width);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
